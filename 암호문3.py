@@ -61,7 +61,7 @@ for tc in range(1, 11):
         else:
             pass
 
-    print(f'#{tc}',end=' ')
+    print(f'#{tc}', end=' ')
     for i in N_list[:10]:
         print(i, end=' ')
     print()
