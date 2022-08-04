@@ -1,1 +1,3 @@
-print(sum(range(1 + int(input()))))
+s = [1,2,3,4,5]
+s.reverse()
+print(s)
