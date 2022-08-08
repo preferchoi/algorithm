@@ -40,7 +40,7 @@ for tc in range(1, 1 + int(input())):
     quest_start, quest_end = map(int, input().split())
     quest_start, quest_end = quest_start - 1, quest_end - 1
     stack = [quest_start]
-    
+
     try:
         while True:
             quest_start = stack.pop()
