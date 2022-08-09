@@ -22,39 +22,24 @@
 
 '''
 
-# TC = int(input())
+
+def solt_2(def_list):
+    for _ in range(100):
+        for j in range(1, 100):
+            if def_list[j] < def_list[j - 1]:
+                def_list[j], def_list[j - 1] = def_list[j - 1], def_list[j]
+    return def_list
+
 
 for tc in range(1, 11):
-    dump = int(input())
+    N = int(input())
     N_list = list(map(int, input().split()))
+    N_list = solt_2(N_list)
+    # N_max, N_min = 0, 9999
 
-    ans_list = [0 for i in range(1, 101)]
-    # print(N_dict)
-    for i in N_list:
-        ans_list[i-1] += 1
+    for i in range(N):
+        N_list[0] += 1
+        N_list[-1] -= 1
+        N_list = solt_2(N_list)
 
-    max_idx = 99
-    min_idx = 0
-    for i in range(dump):
-        while not ans_list[max_idx]:
-            max_idx -= 1
-        while not ans_list[min_idx]:
-            min_idx += 1
-
-        ans_list[max_idx] -= 1
-        ans_list[max_idx - 1] += 1
-        ans_list[min_idx] -= 1
-        ans_list[min_idx + 1] += 1
-
-    min_idx = -1
-    while True:
-        min_idx += 1
-        if ans_list[min_idx]:
-            break
-    max_idx = 100
-    while True:
-        max_idx -= 1
-        if ans_list[max_idx]:
-            break
-
-    print(f'#{tc} {max_idx-min_idx}')
+    print(f'#{tc} {N_list[-1] - N_list[0]}')
