@@ -20,49 +20,26 @@
 727
 70 79 60 9 20 72 4 46 82 5 93 86 14 99 90 23 39 38 11 62 35 9 62 60 94 16 70 38 70 59 1 72 65 18 16 56 16 31 40 13 89 83 55 86 11 85 75 81 16 52 42 16 80 11 99 74 89 78 33 57 90 14 9 42 91 24 64 29 85 79 1 72 86 75 72 34 68 54 96 69 26 77 30 51 99 10 94 87 81 17 50 68 29 80 65 22 6 27 17 17
 
-<<<<<<< HEAD
-N = [1, 2, 3, 4, 5, 6, 7]
-M = [11, 22, 33, 44]
-print(N + M)
-M = N + M
-print(M[1:])
-=======
 '''
 
-# TC = int(input())
+
+def solt_2(def_list):
+    for _ in range(100):
+        for j in range(1, 100):
+            if def_list[j] < def_list[j - 1]:
+                def_list[j], def_list[j - 1] = def_list[j - 1], def_list[j]
+    return def_list
+
 
 for tc in range(1, 11):
-    dump = int(input())
+    N = int(input())
     N_list = list(map(int, input().split()))
+    N_list = solt_2(N_list)
+    # N_max, N_min = 0, 9999
 
-    ans_list = [0 for i in range(1, 101)]
-    # print(N_dict)
-    for i in N_list:
-        ans_list[i-1] += 1
+    for i in range(N):
+        N_list[0] += 1
+        N_list[-1] -= 1
+        N_list = solt_2(N_list)
 
-    max_idx = 99
-    min_idx = 0
-    for i in range(dump):
-        while not ans_list[max_idx]:
-            max_idx -= 1
-        while not ans_list[min_idx]:
-            min_idx += 1
-
-        ans_list[max_idx] -= 1
-        ans_list[max_idx - 1] += 1
-        ans_list[min_idx] -= 1
-        ans_list[min_idx + 1] += 1
-
-    min_idx = -1
-    while True:
-        min_idx += 1
-        if ans_list[min_idx]:
-            break
-    max_idx = 100
-    while True:
-        max_idx -= 1
-        if ans_list[max_idx]:
-            break
-
-    print(f'#{tc} {max_idx-min_idx}')
->>>>>>> c140001eef6a2e9224d68278d4e7625a187c567f
+    print(f'#{tc} {N_list[-1] - N_list[0]}')

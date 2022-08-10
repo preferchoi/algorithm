@@ -16,13 +16,17 @@
 5 5 4 6 8
 
 '''
+<<<<<<< HEAD
 from pprint import pprint
 from itertools import permutations
 
+=======
+>>>>>>> c140001eef6a2e9224d68278d4e7625a187c567f
 TC = int(input())
 for tc in range(1, 1 + TC):
     N = int(input())
     N_list = []
+<<<<<<< HEAD
     sumV_list = []
     for i in range(N):
         listV = list(map(int, input().split()))
@@ -59,3 +63,9 @@ for tc in range(1, 1 + TC):
     N_list[depth][:] 스택에 넣어
     
     '''
+=======
+    for i in range(N):
+        N_list.append(list(map(int, input().split())))
+
+    print(N_list)
+>>>>>>> c140001eef6a2e9224d68278d4e7625a187c567f

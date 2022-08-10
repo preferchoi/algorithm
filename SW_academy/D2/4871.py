@@ -17,7 +17,10 @@
 5 3
 7 8
 1 9
+<<<<<<< HEAD
+=======
 
+>>>>>>> 369965392d37cf49ef7556bb75951e81443fdf35
 1
 6 5
 1 4
@@ -26,7 +29,10 @@
 2 5
 4 6
 1 6
+<<<<<<< HEAD
+=======
 
+>>>>>>> 369965392d37cf49ef7556bb75951e81443fdf35
 '''
 for tc in range(1, 1 + int(input())):
     V, E = map(int, input().split())
@@ -53,6 +59,10 @@ for tc in range(1, 1 + int(input())):
 
     except IndexError:
         print(f'#{tc} 0')
+<<<<<<< HEAD
+
+=======
+>>>>>>> 369965392d37cf49ef7556bb75951e81443fdf35
 '''
 [[False, False, True, True, False, False],
  [False, False, True, False, True, False],
@@ -60,16 +70,45 @@ for tc in range(1, 1 + int(input())):
  [False, False, False, False, False, True],
  [False, False, False, False, False, False],
  [False, False, False, False, False, False]]
+<<<<<<< HEAD
+
+ quest_start, quest_end = 0, 5일 때
+
+ mapp[quest_start], 즉 mapp[0]의 내부 요소 체크
+ [F, F, T, T, F, F]
+
+=======
  
  quest_start, quest_end = 0, 5일 때
  
  mapp[quest_start], 즉 mapp[0]의 내부 요소 체크
  [F, F, T, T, F, F]
  
+>>>>>>> 369965392d37cf49ef7556bb75951e81443fdf35
  체크하면서 T일 경우 quest_start를 T 인덱스 값으로 바꿔주고, 그 요소는 F로 변경
  quest_start가 2로 변경됨
  mapp[quest_start], 즉 mapp[2]의 내부 요소 체크
  [F, F, F, F, F, F]
+<<<<<<< HEAD
+
+ 모든 요소가 F, 다음 노드로 이동할 수 없으니 qeust_start를 이전 노드로 이동시킴
+
+ mapp[quest_start], 즉 mapp[0]의 내부 요소 체크
+ [F, F, F, T, F, F]
+
+ 체크하면서 T일 경우 quest_start를 T 인덱스 값으로 바꿔주고, 그 요소는 F로 변경
+ quest_start가 3으로 변경됨
+
+ mapp[quest_start], 즉 mapp[3]의 내부 요소 체크
+ [F, F, F, F, F, T]
+
+ 체크하면서 T일 경우 quest_start를 T 인덱스 값으로 바꿔주고, 그 요소는 F로 변경
+ quest_start가 5으로 변경됨
+
+ mapp[quest_start], 즉 mapp[5]의 내부 요소 체크
+ 하기 전에, quest_start가 quest_end와 같아졌기 때문에 while루프 종료
+
+=======
  
  모든 요소가 F, 다음 노드로 이동할 수 없으니 qeust_start를 이전 노드로 이동시킴
  
@@ -88,6 +127,7 @@ for tc in range(1, 1 + int(input())):
  mapp[quest_start], 즉 mapp[5]의 내부 요소 체크
  하기 전에, quest_start가 quest_end와 같아졌기 때문에 while루프 종료
  
+>>>>>>> 369965392d37cf49ef7556bb75951e81443fdf35
  이게 맞지
  이걸 스택으로?
  굳이 T를 F로 바꾸지 말고 이동 가능한 경로를 상위 노드부터 돌리는거임
