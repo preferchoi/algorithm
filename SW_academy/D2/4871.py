@@ -50,6 +50,7 @@ for tc in range(1, 1 + int(input())):
                 if mapp[quest_start][i]:
                     stack.append(i)
         print(f'#{tc} 1')
+
     except IndexError:
         print(f'#{tc} 0')
 '''

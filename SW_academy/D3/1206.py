@@ -40,16 +40,20 @@ for tc in range(1, 11):
     mid = N_list[2]
 
     for i in N_list:
-        queue.append(i)
+        queue += [i]
         # 대기열 q에 하나씩 집어넣었음
         # print(queue)
         if len(queue) > 5:
-            queue.pop(0)
+            queue = queue[1:]
             mid = queue[2]
             # 6개 이상 넣었으면 맨 처음넣은거 하나 뺌
+        maxV = 0
+        for j in queue:
+            if maxV < j:
+                maxV = j
 
         # 5개 되면 돌아감
-        if len(queue) == 5 and max(queue) == mid:
+        if len(queue) == 5 and maxV == mid:
             # if문 들어올 때 중간이 최대값인거 확인
             max_2nd = 0
             # 두번째로 큰 값 찾는거
