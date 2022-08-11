@@ -16,56 +16,30 @@
 5 5 4 6 8
 
 '''
-<<<<<<< HEAD
-from pprint import pprint
 from itertools import permutations
 
-=======
->>>>>>> c140001eef6a2e9224d68278d4e7625a187c567f
-TC = int(input())
-for tc in range(1, 1 + TC):
+for tc in range(1, 1 + int(input())):
     N = int(input())
-    N_list = []
-<<<<<<< HEAD
-    sumV_list = []
-    for i in range(N):
-        listV = list(map(int, input().split()))
-        N_list.append(listV)
-    # pprint(N_list)
-    # print(sumV_list)
-    # [[2, 1, 2],
-    #  [5, 8, 5],
-    #  [7, 2, 2]]
-    # 각 줄 평균 구해서 낮은거부터 구현? - 아닌듯...
-    # 그냥 123456789 부터 987654321까지 돌려서 합 중 낮은거 찾는게?
-    # 경우의수 9! = 9*8*7*6*5*4*3*2*1 = 362880
-    # [0, 1, 2, 3, 4, 5, 6, 7, 8] 까지 들어가야하니까
-    go_back = [[True for _ in range(N)] for _ in range(N)]
+    N_list = [list(map(int, input().split())) for _ in range(N)]
 
-    hell_yeah = list(permutations(list(range(N)), N))
-    mini = 9999
-    for i in hell_yeah:
+    minV = 100
+
+    for p in permutations(range(N)):
         sumV = 0
-        tmp = 0
-        # print(i)
-        for j in i:
-            # print(tmp, j)
-            sumV += N_list[tmp][j]
-            tmp += 1
-        # print(sumV)
-        if mini > sumV:
-            mini = sumV
-    print(f'#{tc} {mini}')
-    '''
-    자 어케해볼까
-    1층부터 9층까지 순회 돌려?
-    depth = 1층
-    N_list[depth][:] 스택에 넣어
-    
-    '''
-=======
-    for i in range(N):
-        N_list.append(list(map(int, input().split())))
+        for i in range(N):
+            sumV += N_list[i][p[i]]
 
-    print(N_list)
->>>>>>> c140001eef6a2e9224d68278d4e7625a187c567f
+        if minV > sumV:
+            minV = sumV
+
+    print(f'#{tc} {minV}')
+#
+
+
+
+
+
+
+
+
+

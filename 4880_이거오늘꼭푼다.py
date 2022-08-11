@@ -9,12 +9,11 @@
 
 '''
 
+
 def cut_list(N_list, N_idx_list):
-
     if len(N_list) > 1:
-        L_list, R_list = [N_list[:len(N_list) // 2], N_list[len(N_list) // 2:]]
-        L_idx_list, R_idx_list = [N_idx_list[:len(N_idx_list) // 2], N_idx_list[len(N_idx_list) // 2:]]
-
+        L_list, R_list = [N_list[:(len(N_list) + 1) // 2], N_list[(len(N_list)+1) // 2:]]
+        L_idx_list, R_idx_list = [N_idx_list[:(len(N_idx_list)+1) // 2], N_idx_list[(len(N_idx_list)+1) // 2:]]
     if len(L_list) > 1:
         L_list, L_idx_list = cut_list(L_list, L_idx_list)
 
@@ -25,17 +24,18 @@ def cut_list(N_list, N_idx_list):
 
 
 def winner(N_list, N_idx_list):
+    global dep
 
     L_list, L_idx_list = N_list[0], N_idx_list[0]
     R_list, R_idx_list = N_list[1], N_idx_list[1]
 
     if len(L_list) >= 2:
         L_list, L_idx_list = winner(L_list, L_idx_list)
-
     if len(R_list) >= 2:
         R_list, R_idx_list = winner(R_list, R_idx_list)
 
-    # print('N_list', N_list, 'L_list', L_list, 'R_list', R_list)
+    dep += 1
+    # print(dep, 'N_list', N_list, 'L_list', L_list, 'R_list', R_list)
 
     if len(L_list) == 1 and len(R_list) == 1:
         if L_list[0] == 1:
@@ -62,13 +62,8 @@ for tc in range(1, 1 + int(input())):
     N_list = list(map(int, input().split()))
     N_idx_list = list(range(1, N + 1))
 
+    dep = 0
     N_list, N_idx_list = cut_list(N_list, N_idx_list)
     ans, ans_idx = winner(N_list, N_idx_list)
 
     print(f'#{tc} {ans_idx[0]}')
-
-'''
-내부요소 전부 순회돌려서 만약 길이가 2 이상이다? 바로 갈라
-깊이를 어케 파고들어가야하지?
-6번 그냥 손으로 돌려? 에반데
-'''
