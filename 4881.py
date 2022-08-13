@@ -18,28 +18,20 @@
 '''
 from itertools import permutations
 
+
+def find():
+    mv = 100
+    for p in permutations(range(N)):
+        sv = 0
+        for i in range(N):
+            sv += lst[i][p[i]]
+        if mv > sv:
+            mv = sv
+    return mv
+
+
 for tc in range(1, 1 + int(input())):
     N = int(input())
-    N_list = [list(map(int, input().split())) for _ in range(N)]
+    lst = [list(map(int, input().split())) for _ in range(N)]
 
-    minV = 100
-
-    for p in permutations(range(N)):
-        sumV = 0
-        for i in range(N):
-            sumV += N_list[i][p[i]]
-
-        if minV > sumV:
-            minV = sumV
-
-    print(f'#{tc} {minV}')
-#
-
-
-
-
-
-
-
-
-
+    print('#{} {}'.format(tc, find()))
