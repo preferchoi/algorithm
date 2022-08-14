@@ -1,7 +1,8 @@
 from pprint import pprint
+
 for tc in range(1, 1 + int(input())):
     V, E = map(int, input().split())
-    map_list = [[False for _ in range(V+1)] for _ in range(V+1)]
+    map_list = [[False for _ in range(V + 1)] for _ in range(V + 1)]
     queue = []
     deep = -1
 
@@ -20,8 +21,8 @@ for tc in range(1, 1 + int(input())):
         if q_start == q_end:
             break
 
-        for i in range(V+1):
-            if  map_list[q_start][i]:
+        for i in range(V + 1):
+            if map_list[q_start][i]:
                 map_list[q_start][i] = False
                 queue.append([i, deep])
     else:
