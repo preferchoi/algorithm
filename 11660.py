@@ -8,6 +8,7 @@
 3 4 3 4
 1 1 4 4
 '''
+
 N, M = map(int, input().split())
 
 mapp = []

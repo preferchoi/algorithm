@@ -23,23 +23,42 @@
 '''
 
 for tc in range(1, 1 + int(input())):
+<<<<<<< HEAD:4698.py
     road = [0 for _ in range(1001)]
+=======
+
+    road = [False for _ in range(1001)]
+
+>>>>>>> cb6e8c27f7916f3c3badab6453caad43f2a09847:SW_academy/D2/4698.py
     N = int(input())
+
     for _ in range(N):
         bus_type, start, end = map(int, input().split())
+        end += 1
         if bus_type == 1:
-            for i in range(start, end + 1):
+            for i in range(start, end):
                 road[i] += 1
 
+<<<<<<< HEAD:4698.py
         if bus_type == 2:
             for i in range(start, end, 2):
                 road[i] += 1
 
         if bus_type == 3:
+=======
+        elif bus_type == 2:
+            for i in range(start, end, 2):
+                road[i] += 1
+
+        elif bus_type == 3:
+>>>>>>> cb6e8c27f7916f3c3badab6453caad43f2a09847:SW_academy/D2/4698.py
             if not start % 2:
-                for i in range(start, end, 4):
-                    road[i] += 1
+
+                for i in range(start, end):
+                    if not i % 4:
+                        road[i] += 1
             else:
+
                 for i in range(start, end):
                     if not i % 3 and i % 10:
                         road[i] += 1

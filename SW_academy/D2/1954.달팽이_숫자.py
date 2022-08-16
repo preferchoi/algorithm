@@ -25,5 +25,5 @@ for tc in range(1, 1 + int(input())):
             x += go_x[go]
             y += go_y[go]
 
-    mapp = np.array(mapp)
+    mapp = np.words(mapp)
     print(mapp)
