@@ -23,16 +23,18 @@
 '''
 
 for tc in range(1, 1 + int(input())):
-    road = [0 for _ in range(101)]
+    road = [0 for _ in range(1001)]
     N = int(input())
     for _ in range(N):
         bus_type, start, end = map(int, input().split())
         if bus_type == 1:
             for i in range(start, end + 1):
                 road[i] += 1
+
         if bus_type == 2:
             for i in range(start, end, 2):
                 road[i] += 1
+
         if bus_type == 3:
             if not start % 2:
                 for i in range(start, end, 4):
@@ -41,4 +43,5 @@ for tc in range(1, 1 + int(input())):
                 for i in range(start, end):
                     if not i % 3 and i % 10:
                         road[i] += 1
+
     print(f'#{tc} {max(road)}')
