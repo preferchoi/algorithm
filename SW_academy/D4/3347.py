@@ -1,3 +1,13 @@
+'''
+2
+4 3
+5 3 1 4
+4 3 2
+6 6
+3 1 4 1 5 9
+2 6 5 3 5 9
+
+'''
 for tc in range(1, 1 + int(input())):
     N, M = map(int, input().split())
     N_list = list(map(int, input().split()))
