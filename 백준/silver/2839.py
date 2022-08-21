@@ -3,8 +3,8 @@ A, B = 3, 5
 cnt = N // (A * B) * A
 
 num_list = []
-for five in range(N // A + 1):
-    for three in range(N // B + 1):
+for five in range(N // A + 3):
+    for three in range(N // B + 3):
         if five * 5 + three * 3 <= N:
             num_list.append([five * 5 + three * 3, five + three])
 # print(num_list)
