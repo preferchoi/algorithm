@@ -1,8 +1,7 @@
 N = int(input())
 N_list = [int(input()) for _ in range(N)]
 N_list.sort()
-for i in N_list:
-    print(i)
+print(*N_list)
 # 버블 정렬
 # for _ in range(N):
 #     for j in range(N-1):
