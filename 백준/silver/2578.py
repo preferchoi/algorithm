@@ -41,7 +41,7 @@ for i in shout:
     if not tmo:
         flag += 1
 
-    if flag == 3:
+    if flag >= 3:
         break
 
 print(cnt)
