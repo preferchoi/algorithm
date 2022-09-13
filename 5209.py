@@ -25,13 +25,22 @@ from itertools import permutations
 for tc in range(1, 1 + int(input())):
     N = int(input())
     N_list = [list(map(int, input().split())) for _ in range(N)]
-    maxV = 999999999
+    line_max = []
+    cnt = 0
+    for i in N_list:
+        cnt += max(i)
+        line_max.append(cnt)
+    print(line_max)
+    maxV = line_max[-1]
     for i in permutations(range(N), N):
         cnt = 0
         sumV = 0
         for j in i:
             sumV += N_list[cnt][j]
             cnt += 1
+
+            if sumV >= line_max[cnt-1]:
+                break
 
         if sumV < maxV:
             maxV = sumV
