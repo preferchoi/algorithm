@@ -17,5 +17,7 @@ for tc in range(1, 1 + int(input())):
     lst = [list(map(int, input().split())) for _ in range(N)]
     print(lst, oper)
 
-    for y in range(N-1):
+    if oper in ['up', 'down']:
+
+    for y in range(N - 1):
         for x in range(N):
