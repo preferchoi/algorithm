@@ -41,17 +41,19 @@ for tc in range(int(input())):
                             lst[ify][ifx] = '*'
                             q.append([ify, ifx, d + 1])
 
+    # 탈출 가능한 경로들
     ans = []
+    # 외곽 돌면서 숫자인 것 잧음
     for y in [0, Y - 1]:
         for x in range(X):
             if lst[y][x] != '#' and lst[y][x] != '*':
                 ans.append(lst[y][x])
-
     for y in range(Y):
         for x in [0, X - 1]:
             if lst[y][x] != '#' and lst[y][x] != '*':
                 ans.append(lst[y][x])
-
+    
+    # 외곽에 숫자 있으면 최소값 출력
     if ans:
         print(min(ans) + 1)
     else:
